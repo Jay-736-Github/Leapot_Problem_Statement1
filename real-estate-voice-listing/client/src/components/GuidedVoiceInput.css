@@ -1,0 +1,250 @@
+/* Import animate.css for animations */
+@import "animate.css";
+
+.guided-voice-input {
+  max-width: 1000px;
+  margin: 2rem auto;
+  transition: all 0.3s ease;
+}
+
+.card {
+  background: linear-gradient(145deg, #ffffff, #f5f5f5);
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Welcome Screen Styles */
+.welcome-screen {
+  padding: 2rem;
+}
+
+.instruction-list {
+  list-style-position: inside;
+  padding: 0;
+}
+
+.instruction-item {
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  background-color: rgba(0, 123, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.instruction-item:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  transform: translateX(10px);
+}
+
+.start-button {
+  transition: all 0.3s ease;
+  border-radius: 25px;
+  padding: 1rem 2rem;
+}
+
+.start-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Question Styles */
+.question-header {
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: rgba(0, 123, 255, 0.05);
+}
+
+.question-text {
+  color: #2c3e50;
+}
+
+.hint-text {
+  font-style: italic;
+}
+
+/* Progress Bar Styles */
+.progress {
+  height: 35px;
+  border-radius: 8px;
+  background-color: #2c3e50;
+  overflow: visible;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.progress-bar {
+  background: linear-gradient(45deg, #2c3e50, #34495e);
+  transition: width 0.6s ease;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  min-width: 150px !important;
+  padding: 0 15px;
+  white-space: nowrap;
+}
+
+.progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 30px 30px;
+  animation: progress-animation 1s linear infinite;
+  opacity: 0.3;
+  border-radius: 8px;
+}
+
+@keyframes progress-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 0;
+  }
+}
+
+/* Input Area Styles */
+.custom-textarea {
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  resize: none;
+}
+
+.custom-textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.update-btn {
+  border-radius: 0 10px 10px 0;
+  transition: all 0.3s ease;
+}
+
+.update-btn:hover:not(:disabled) {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Control Buttons Styles */
+.control-buttons {
+  flex-wrap: wrap;
+}
+
+.control-btn {
+  min-width: 120px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.control-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.record-btn {
+  background: linear-gradient(45deg, #007bff, #00bcd4);
+  border: none;
+}
+
+.stop-btn {
+  background: linear-gradient(45deg, #ffc107, #ff9800);
+  border: none;
+}
+
+/* Pulse Animation for Recording Button */
+.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 193, 7, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+  }
+}
+
+/* Collected Information Styles */
+.collected-info {
+  transition: all 0.3s ease;
+}
+
+.collected-data {
+  transition: all 0.3s ease;
+}
+
+.info-item {
+  padding: 0.5rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .control-buttons {
+    flex-direction: column;
+  }
+
+  .control-btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .collected-data .row {
+    flex-direction: column;
+  }
+}
+
+/* Animation Classes */
+.animate__animated {
+  animation-duration: 0.5s;
+}
+
+/* Custom Fade Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
